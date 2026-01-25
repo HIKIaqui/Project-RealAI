@@ -3,8 +3,18 @@
 #include <stdlib.h>
 #include "world.h"
 #include "maps/map1.h"
+#include "main.h"
 
-unsigned char grid[H][W] = {0};
+
+tileTemplate tile[H][W] = {0};
+
+tileTemplate* getTile(int x, int y) {
+    if (x < 0 || x >= W || y < 0 || y >= H)
+        return NULL;
+    return &tile[y][x];
+}
+
+
 
 int main(void) {
     // Agente
@@ -13,7 +23,7 @@ int main(void) {
     generateWorld1();
     // Loop simples: por enquanto não move.
     for (;;) {
-        renderWorld(grid, ax, ay);
+        renderWorld(ax, ay);
         printf("\nPressione ENTER pra avancar um tick...");
         int c = getchar();
         (void)c;

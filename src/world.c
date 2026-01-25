@@ -1,12 +1,18 @@
 #include <stdio.h>
 #include "utils.h"
+#include "main.h"
 
-#define W 100
-#define H 40
+int getTileType(int x, int y) {
+    tileTemplate* p = getTile(x, y);
+    return p->type;
+}
 
+void setTileType(int setType, int x, int y){
+    tileTemplate* p = getTile(x, y);
+    p->type = setType;
+}
 
-
-void renderWorld(unsigned char grid[H][W], int ax, int ay) {
+void renderWorld(int ax, int ay) {
     clearScreen();
     for (int y = 0; y < H; y++) {
         for (int x = 0; x < W; x++) {
@@ -14,7 +20,7 @@ void renderWorld(unsigned char grid[H][W], int ax, int ay) {
                 putchar('@'); 
                 continue;
             } 
-            switch (grid[y][x]) {
+            switch (getTileType(x, y)) {
                 case 1: 
                     putchar('R');
                     break;

@@ -3,7 +3,8 @@
 
 #define W 100
 #define H 40
-extern unsigned char grid[H][W];
-void renderWorld(unsigned char grid[H][W], int ax, int ay);
+void renderWorld(int ax, int ay);
+int getTileType(int x, int y);
+void setTileType(int setType, int x, int y);
 
 #endif

@@ -2,7 +2,8 @@
 
 void generateWorld1(){
 // Algumas “coisas” no mundo só pra visual
-    grid[2][5] = 1;  // recurso
-    grid[6][12] = 2; // perigo
-    grid[1][16] = 3; // seguro
+
+    setTileType(1, 2, 5); // recurso
+    setTileType(2, 6, 12); // perigo
+    setTileType(3, 1, 16); // seguro
 }
