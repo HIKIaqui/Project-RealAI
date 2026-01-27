@@ -6,9 +6,6 @@
 void generateWorld(){
     int numberOfCharacters = getNumberOfCharacters();
     int r;
-    if (numberOfCharacters > maxNumberOfCharacters) {
-        numberOfCharacters = maxNumberOfCharacters;
-    };
     for (int i = 0; i < numberOfCharacters; i++) {
         characterTemplate* c = getCharacterByIndex(i);
         r = rand() % W;

@@ -30,6 +30,9 @@ int main(void) {
     srand(time(NULL));
     printf("\nHow many AI characters do you want to generate? The number must be an integer.\n\n");
     scanf_s("%d", &numberOfCharacters);
+    if (numberOfCharacters > maxNumberOfCharacters || numberOfCharacters < 0) {
+        numberOfCharacters = maxNumberOfCharacters;
+    };
     generateWorld();
     // Loop simples: por enquanto não move.
     for (;;) {
