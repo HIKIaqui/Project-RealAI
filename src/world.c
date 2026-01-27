@@ -48,9 +48,6 @@ void renderWorld() {
     clearScreen();
     int isCharacterHere = 0;
     int numberOfCharacters = getNumberOfCharacters();
-    if (numberOfCharacters > maxNumberOfCharacters) {
-        numberOfCharacters = maxNumberOfCharacters;
-    };
     for (int y = 0; y < H; y++) {
         for (int x = 0; x < W; x++) {
             isCharacterHere = 0;

@@ -30,6 +30,7 @@ int main(void) {
     srand(time(NULL));
     printf("\nHow many AI characters do you want to generate? The number must be an integer.\n\n");
     scanf_s("%d", &numberOfCharacters);
+    //Only an out of bounds check
     if (numberOfCharacters > maxNumberOfCharacters || numberOfCharacters < 0) {
         numberOfCharacters = maxNumberOfCharacters;
     };
