@@ -2,8 +2,9 @@
 #include <Windows.h>
 #include <stdlib.h>
 #include "world.h"
-#include "maps/map1.h"
+#include "maps/generateWorld.h"
 #include "main.h"
+#include <time.h>
 
 
 tileTemplate tile[H][W] = {0};
@@ -14,17 +15,26 @@ tileTemplate* getTile(int x, int y) {
     return &tile[y][x];
 }
 
+characterTemplate characters[maxNumberOfCharacters] = {0};
 
-
+characterTemplate* getCharacterByIndex(int arrayIndex) {
+    if (arrayIndex < 0 || arrayIndex >= maxNumberOfCharacters)
+        return NULL;
+    return &characters[arrayIndex];
+}
+int numberOfCharacters = 0;
+int getNumberOfCharacters() {
+    return numberOfCharacters;
+}
 int main(void) {
-    // Agente
-    int ax = W / 2;
-    int ay = H / 2;
-    generateWorld1();
+    srand(time(NULL));
+    printf("\nHow many AI characters do you want to generate? The number must be an integer.\n\n");
+    scanf_s("%d", &numberOfCharacters);
+    generateWorld();
     // Loop simples: por enquanto não move.
     for (;;) {
-        renderWorld(ax, ay);
-        printf("\nPressione ENTER pra avancar um tick...");
+        renderWorld();
+        printf("\nPress ENTER to progress 1 cicle...");
         int c = getchar();
         (void)c;
     }

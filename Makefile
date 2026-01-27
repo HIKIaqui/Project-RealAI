@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -g -O0
-SRC = src/main.c src/world.c src/maps/map1.c src/utils.c
+SRC = src/main.c src/world.c src/maps/map1.c src/utils.c src/maps/generateWorld.c
 OUT = build/app.exe
 
 all:
