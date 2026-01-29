@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "world.h"
 #include "maps/generateWorld.h"
+#include "cycleSystem/cycleMaster.h"
 #include "main.h"
 #include <time.h>
 
@@ -41,6 +42,7 @@ int main(void) {
         printf("\nPress ENTER to progress 1 cicle...");
         int c = getchar();
         (void)c;
+        cycleTick();
     }
 
     return 0;

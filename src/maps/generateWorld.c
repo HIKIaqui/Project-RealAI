@@ -4,8 +4,8 @@
 #include <stdlib.h>
 
 void generateWorld(){
-    int numberOfCharacters = getNumberOfCharacters();
-    int r;
+    int numberOfCharacters, r;
+    numberOfCharacters = getNumberOfCharacters();
     for (int i = 0; i < numberOfCharacters; i++) {
         characterTemplate* c = getCharacterByIndex(i);
         r = rand() % W;
